@@ -43,7 +43,6 @@ function AppContent() {
       <Navbar />
 
       <Routes>
-
         {/* Home Page */}
         <Route path="/" element={<Home />} />
 
@@ -58,13 +57,13 @@ function AppContent() {
 
         {/* Quotes Page */}
         <Route path="/quotes" element={<QuotesPage />} />
-
       </Routes>
     </>
   );
 }
 
 function App() {
+  // basename ko aapke GitHub repository ke naam ke mutabiq set kiya gaya hai
   return (
     <Router>
       <AppContent />
