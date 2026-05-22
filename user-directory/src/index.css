@@ -1,0 +1,1096 @@
+/* ── 1. GLOBAL RESET & BASE GRADIENT ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  /* Premium Dark Theme Background */
+  background: linear-gradient(135deg, #090d16 0%, #111026 50%, #1f0b2a 100%);
+  color: #f1f5f9;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── 2. NAVBAR LAYOUT (Transparent, Left Logo, Right Links) ── */
+.custom-navbar {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 25px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #38bdf8 !important;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/* ── 3. HOME PAGE (Seamless & Borderless Text Layout) ── */
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 85px);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-section, .overlay {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  max-width: 800px;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.main-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #38bdf8 !important;
+  -webkit-text-fill-color: initial !important;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 40px;
+  color: #38bdf8 !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+.subtitle {
+  color: #cbd5e1;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 850px;
+  margin: 0 auto 45px auto;
+}
+
+.feature-item {
+  background: transparent !important;
+  border: none !important;
+  text-align: center;
+}
+
+.feature-item h3 {
+  color: #38bdf8;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.home-btn-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.explore-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.explore-btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.explore-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5);
+}
+
+.explore-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #38bdf8;
+}
+
+/* ── 4. GRID LAYOUT SYSTEM (Strictly 3 Boxes Per Row) ── */
+.scholars-container, .users-container, .quotes-page-container {
+  padding: 40px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.scholars-grid, .quotes-grid, .users-grid {
+  display: grid;
+  /* Enforces exactly 3 boxes per row on desktop views */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px;
+  width: 100%;
+}
+
+/* Distinct Solid Content Boxes (Scholars & Quotes Unified) */
+.scholar-card, .user-card, .quote-card {
+  background: #1e293b; /* Distinct dark box surface */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 240px; /* Symmetrical uniform alignment layout */
+  width: 100%;
+}
+
+.scholar-card:hover, .user-card:hover, .quote-card:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+  box-shadow: 0 20px 35px rgba(56, 189, 248, 0.15);
+}
+
+/* Typography inside Scholars cards */
+.scholar-card h3, .user-card h3 {
+  color: #38bdf8 !important;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.scholar-details {
+  margin-bottom: 20px;
+}
+
+.scholar-card p, .user-card p {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+.scholar-card strong, .user-card strong {
+  color: #94a3b8;
+}
+
+/* ── VIEW DETAILS BUTTON STYLING ── */
+.details-btn {
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: auto;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.details-btn:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+}
+
+/* ── QUOTES BOXES INTERNAL STYLING ── */
+.quote-card p {
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #f8fafc; /* Crystal clear reading color */
+  margin-bottom: 20px;
+}
+
+.quote-card span {
+  display: block;
+  font-style: normal;
+  font-size: 0.95rem;
+  color: #c084fc; /* Purple accent tone for the author citation */
+  font-weight: 600;
+  text-align: right;
+  margin-top: auto; /* Always aligns citations to the bottom of box */
+}
+
+/* ── 5. ULTRA-CLEAN LOADER IN OVERLAY LAYER ── */
+.welcome-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #090d16 !important; /* Solid black canvas overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999 !important;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(56, 189, 248, 0.1);
+  border-top: 4px solid #38bdf8;
+  border-radius: 50%;
+  animation: spinSmooth 0.8s linear infinite;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+@keyframes spinSmooth {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ── 6. RESPONSIVE BREAKPOINTS ── */
+@media (max-width: 1024px) {
+  .scholars-grid, .quotes-grid, .users-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .custom-navbar { flex-direction: column; gap: 15px; text-align: center; }
+  .nav-links { gap: 20px; }
+  .main-title { font-size: 2.5rem; }
+  .scholars-grid, .quotes-grid, .users-grid { grid-template-columns: 1fr; }
+}
+
+/* ── 7. PREMIUM AUTHENTICATION STYLING (SIGNUP) ── */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 90px);
+  padding: 40px 20px;
+}
+
+.auth-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.auth-card h2 {
+  color: #38bdf8;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+.auth-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+  margin-top: 10px;
+}
+
+.auth-btn:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.auth-footer {
+  margin-top: 25px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.auth-footer a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar Signup Tab Button Style */
+.nav-links .nav-signup-btn {
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  color: #ffffff !important;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+  transition: all 0.3s ease;
+}
+
+.nav-links .nav-signup-btn:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+}
+
+/* ── PREMIUM FLOATING SUCCESS TOAST NOTIFICATION ── */
+.custom-success-alert {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%); /* Elegant emerald green theme */
+  color: #ffffff;
+  padding: 16px 28px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(16, 185, 129, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000000; /* Stays above your loader or nav elements perfectly */
+  animation: dropSlideDown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.alert-icon {
+  background: rgba(255, 255, 255, 0.2);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.custom-success-alert p {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* Slide Drop Animation Engine */
+@keyframes dropSlideDown {
+  0% { top: -100px; opacity: 0; }
+  100% { top: 30px; opacity: 1; }
+}
+
+/* ── 8. PREMIUM SCHOLAR DETAILS SCREEN STYLING ── */
+.details-page-container {
+  padding: 50px 5%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Back navigation utility element styling */
+.back-link-btn {
+  display: inline-block;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  transition: color 0.3s ease;
+}
+
+.back-link-btn:hover {
+  color: #38bdf8;
+}
+
+/* Main Dashboard Sheet Box styling */
+.scholar-profile-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+/* Left Side Header Showcase Column */
+.profile-header-zone {
+  background: linear-gradient(180deg, #1e1b4b 0%, #111026 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Circular Geometric Icon Shield placeholder */
+.profile-avatar-shield {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+}
+
+.profile-header-zone h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.profile-tag-badge {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+/* Right Side Grid details space panel */
+.profile-content-grid {
+  padding: 45px;
+  width: 65%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  align-content: center;
+}
+
+.profile-info-block h3 {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.profile-info-block p {
+  color: #f1f5f9;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.profile-info-block .highlight-book-text {
+  color: #c084fc; /* Distinct purple shade for book titles */
+  font-weight: 600;
+}
+
+/* Multi-row grid adjustments rules */
+.full-width-block {
+  grid-column: span 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px 0;
+}
+
+.biography-text-content {
+  font-size: 1rem !important;
+  line-height: 1.7;
+  color: #cbd5e1 !important;
+  font-weight: 400 !important;
+  text-align: justify;
+}
+
+.format-contact-block {
+  grid-column: span 2;
+}
+
+.contact-sub-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 5px;
+}
+
+.contact-sub-row p {
+  font-size: 0.9rem !important;
+  color: #64748b !important;
+}
+
+.contact-sub-row strong {
+  color: #94a3b8;
+}
+
+/* ── RESPONSIVE ADAPTATIONS FOR PROFILE VIEWS ── */
+@media (max-width: 850px) {
+  .scholar-profile-card { flex-direction: column; }
+  .profile-header-zone { width: 100%; padding: 40px 20px; border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+  .profile-content-grid { width: 100%; padding: 35px 25px; grid-template-columns: 1fr; gap: 25px; }
+  .full-width-block { grid-column: span 1; }
+  .format-contact-block { grid-column: span 1; }
+  .contact-sub-row { flex-direction: column; gap: 8px; }
+}
+
+/* ── ADVANCED QUOTES CORNER STYLING ── */
+.quotes-subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-top: -30px;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+}
+
+/* Base Card Blueprint Overhaul */
+.premium-quote-card {
+  background: #1e293b;
+  border-radius: 20px;
+  padding: 35px 30px 25px 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Giant Translucent background watermark design */
+.quote-mark-bg {
+  position: absolute;
+  top: -20px;
+  left: 15px;
+  font-size: 8rem;
+  font-family: Georgia, serif;
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Distinctive Categorized Border Highlights */
+.premium-quote-card.quran-border { border: 1px solid rgba(16, 185, 129, 0.15); border-top: 4px solid #10b981; }
+.premium-quote-card.hadith-border { border: 1px solid rgba(56, 189, 248, 0.15); border-top: 4px solid #38bdf8; }
+.premium-quote-card.saying-border { border: 1px solid rgba(192, 132, 252, 0.15); border-top: 4px solid #c084fc; }
+
+.premium-quote-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+.premium-quote-card.quran-border:hover { border-color: #10b981; box-shadow: 0 15px 30px rgba(16, 185, 129, 0.15); }
+.premium-quote-card.hadith-border:hover { border-color: #38bdf8; box-shadow: 0 15px 30px rgba(56, 189, 248, 0.15); }
+.premium-quote-card.saying-border:hover { border-color: #c084fc; box-shadow: 0 15px 30px rgba(192, 132, 252, 0.15); }
+
+/* Dynamic Badges Layout */
+.quote-tag {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+.quran-tag { background: rgba(16, 185, 129, 0.12); color: #10b981; }
+.hadith-tag { background: rgba(56, 189, 248, 0.12); color: #38bdf8; }
+.saying-tag { background: rgba(192, 132, 252, 0.12); color: #c084fc; }
+
+/* Internal Typography context alignment */
+.quote-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #f8fafc;
+  margin-bottom: 15px;
+  z-index: 1;
+}
+
+.quote-source {
+  display: block;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  font-weight: 500;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+/* Minimalist Copy Utility Button */
+.copy-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.copy-btn:hover {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── 9. SCHOLARS & QUOTES FILTER TABS STYLING ── */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 45px;
+  flex-wrap: wrap; /* Ensures tabs look perfect on mobile screens too */
+}
+
+.filter-pill {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-pill:hover {
+  background: rgba(56, 189, 248, 0.05);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Active Highlight Filter Tab styling */
+.filter-pill.active {
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+}
+
+/* ── 10. LANGUAGE SELECTOR COMPONENT UI (MATCHING WEBSITE THEME) ── */
+.language-selector-init-zone, .language-selector-zone {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.03); /* Translucent dark glass matching */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8; /* Seamless slate gray */
+  padding: 8px 18px;
+  border-radius: 50px; /* Perfect round pills matching filter tabs! */
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover state matching theme pills */
+.lang-btn:hover {
+  background: rgba(56, 189, 248, 0.05);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Active state trigger with Cyan-Blue Neon Gradient Glow */
+.lang-btn.active-lang {
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  color: #ffffff !important;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+  font-weight: 700;
+}
+
+/* RTL Support Framework for Urdu Context Layout */
+.rtl-layout {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+.rtl-layout .quote-source {
+  text-align: left !important; /* Inverts citation labels leftward in Urdu view */
+}
+
+.rtl-layout .quote-text {
+  font-family: 'Joname', 'Noto Nastaliq Urdu', 'Segoe UI', serif !important;
+  font-size: 1.45rem; /* Larger font space to support Urdu Nastaliq scales */
+  line-height: 1.8;
+}
+/* ── 14. GLOBAL HEADER PROFILE ── */
+.global-header-bar {
+  width: 100%;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Light mode control for header border lines */
+.light-theme-mode .global-header-bar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header-max-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-start; /* Aligns button to left nicely */
+  align-items: center;
+}
+
+.main-content-viewport {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+/* Detail Page Styling */
+.scholar-detail-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  line-height: 1.8;
+}
+
+.scholar-detail-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+.scholar-detail-container p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+/* Detail Box Layout */
+.detail-box {
+  display: flex;
+  gap: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 40px;
+  border-radius: 20px;
+  border: 2px solid transparent; /* Transparent border for hover */
+  transition: 0.3s ease;
+  margin-top: 20px;
+}
+
+/* Hover Effect: Jab pointer box mein jaye */
+.detail-box:hover {
+  border: 2px solid #38bdf8; /* Blue outline */
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+/* Avatar Circle */
+.avatar-circle {
+  width: 100px;
+  height: 100px;
+  background: #38bdf8;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.info-side h1 { color: #38bdf8; margin: 0; }
+.back-btn { color: #38bdf8; text-decoration: none; }
+/* ── 8. PREMIUM SCHOLAR DETAILS SCREEN STYLING ── */
+.details-page-container {
+  padding: 50px 5%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Back navigation utility element styling */
+.back-link-btn {
+  display: inline-block;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  transition: color 0.3s ease;
+}
+
+.back-link-btn:hover {
+  color: #38bdf8;
+}
+
+/* Main Dashboard Sheet Box styling */
+.scholar-profile-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+/* Left Side Header Showcase Column */
+.profile-header-zone {
+  background: linear-gradient(180deg, #1e1b4b 0%, #111026 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Circular Geometric Icon Shield placeholder */
+.profile-avatar-shield {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+}
+
+.profile-header-zone h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.profile-tag-badge {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+/* Right Side Grid details space panel */
+.profile-content-grid {
+  padding: 45px;
+  width: 65%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  align-content: center;
+}
+
+.profile-info-block h3 {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.profile-info-block p {
+  color: #f1f5f9;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.profile-info-block .highlight-book-text {
+  color: #c084fc; /* Distinct purple shade for book titles */
+  font-weight: 600;
+}
+
+/* Multi-row grid adjustments rules */
+.full-width-block {
+  grid-column: span 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px 0;
+}
+
+.biography-text-content {
+  font-size: 1rem !important;
+  line-height: 1.7;
+  color: #cbd5e1 !important;
+  font-weight: 400 !important;
+  text-align: justify;
+}
+
+.format-contact-block {
+  grid-column: span 2;
+}
+
+.contact-sub-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 5px;
+}
+
+.contact-sub-row p {
+  font-size: 0.9rem !important;
+  color: #64748b !important;
+}
+
+.contact-sub-row strong {
+  color: #94a3b8;
+}
+
+/* ── RESPONSIVE ADAPTATIONS FOR PROFILE VIEWS ── */
+@media (max-width: 850px) {
+  .scholar-profile-card { flex-direction: column; }
+  .profile-header-zone { width: 100%; padding: 40px 20px; border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+  .profile-content-grid { width: 100%; padding: 35px 25px; grid-template-columns: 1fr; gap: 25px; }
+  .full-width-block { grid-column: span 1; }
+  .format-contact-block { grid-column: span 1; }
+  .contact-sub-row { flex-direction: column; gap: 8px; }
+}
+.custom-blue-spinner {
+  width: 60px; /* Thoda bada size */
+  height: 60px;
+  border: 4px solid rgba(255, 255, 255, 0.1); /* Background bilkul light aur transparent */
+  border-left: 4px solid #4a90e2; /* Soft Premium Blue */
+  border-radius: 50%;
+  animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite; /* Slow aur smooth rotation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Spinner Overlay - Poori screen ko cover karega */
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0b0e14; /* Agar dark mode hai to yahan #000000 likhein */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  
+}
+
+/* Premium Blue Spinner */
+.custom-blue-spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #e3f2fd; /* Light background blue */
+  border-top: 6px solid #007bff; /* Aapka original theme blue */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
